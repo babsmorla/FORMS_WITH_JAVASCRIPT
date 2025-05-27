@@ -31,7 +31,7 @@ const good=document.getElementById("success");
     }
 
     success.style.display ="block"
-      success.innerHTML ="Success"
+      success.innerHTML ="Registration successful"
         success.style.color="green"
   });
 
