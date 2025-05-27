@@ -4,7 +4,7 @@
   const pass1 = document.getElementById("pass1");
 
   const pass2 = document.getElementById("pass2");
-
+const good=document.getElementById("success");
   const submit = document.getElementById("submit");
 
   submit.addEventListener("click", function (event) {
@@ -14,15 +14,24 @@
     const confirmPassword = pass2.value.trim();
 
     if (password.length < 8) {
-      alert("Password must be at least 8 characters long.");
+      
+      success.style.display ="block"
+      success.innerHTML ="Password must be 8 character long"
+            success.style.color="red"
+
       return;
     }
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match.");
+      
+      success.style.display ="block"
+      success.innerHTML ="Password does not match"
+        success.style.color="red"
       return;
     }
 
-    alert("Successful");
+    success.style.display ="block"
+      success.innerHTML ="Sucessfull"
+        success.style.color="green"
   });
 
