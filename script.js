@@ -16,7 +16,7 @@ const good=document.getElementById("success");
     if (password.length < 8) {
       
       success.style.display ="block"
-      success.innerHTML ="Password must be 8 character long"
+      success.innerHTML ="Password must be at least 8 characters."
             success.style.color="red"
 
       return;
@@ -25,13 +25,13 @@ const good=document.getElementById("success");
     if (password !== confirmPassword) {
       
       success.style.display ="block"
-      success.innerHTML ="Password does not match"
+      success.innerHTML ="Password and Confirm Password must match."
         success.style.color="red"
       return;
     }
 
     success.style.display ="block"
-      success.innerHTML ="Sucessfull"
+      success.innerHTML ="Success"
         success.style.color="green"
   });
 
