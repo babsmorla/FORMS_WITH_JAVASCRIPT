@@ -1,35 +1,28 @@
 
+  const form = document.getElementById("form");
 
+  const pass1 = document.getElementById("pass1");
 
+  const pass2 = document.getElementById("pass2");
 
+  const submit = document.getElementById("submit");
 
-const password1 = document.getElementById("pass1").value;
+  submit.addEventListener("click", function (event) {
+    event.preventDefault();
 
-const password2 = document.getElementById("pass2").value;
+    const password = pass1.value.trim();
+    const confirmPassword = pass2.value.trim();
 
-const good = document.getElementById("success");
+    if (password.length < 8) {
+      alert("Password must be at least 8 characters long.");
+      return;
+    }
 
-const form = document.getElementById("form");
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
+    alert("Successful");
+  });
 
-  const password1 = document.getElementById("pass1").value;
-  const confirmPassword2 = document.getElementById("pass2").value;
-
-  // Validation
-  if (password1.length < 8) {
-    good.innerText = "Password must be at least 8 characters long.";
-    good.style.visibility = "visible";
-  }
-
-  if (password1 !== confirmPassword2) {
-    good.innerText = "Password and Confirm Password must match.";
-    // good.style.visibility = "hidden";
-  }
-
-  if (password1 == confirmPassword2) {
-    good.innerText = "Password and Confirm Password  match.";
-    good.style.visibility = "visible";
-  }
-});
